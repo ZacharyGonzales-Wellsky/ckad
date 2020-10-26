@@ -26,3 +26,7 @@ kubectl delete replicaset myapp-replicaset
 ```
 kubectl replace -f replicaset-def
 ```
+### scale replicaset
+```
+kubectl scale replicaset -replicas=6 new-replica-set
+```
