@@ -28,5 +28,17 @@ kubectl replace -f replicaset-def
 ```
 ### scale replicaset
 ```
-kubectl scale replicaset -replicas=6 new-replica-set
+kubectl scale replicaset --replicas=6 new-replica-set
+```
+### get deployments
+```
+kubectl get deployments
+```
+### create a deployment using flags
+```
+kubectl create deployment --image:httpd:2.4-alpine
+```
+### scale deployment
+```
+kubectl scale deployment --replicas=3 httpd-frontend
 ```
