@@ -62,3 +62,25 @@ kubectl apply -f pod.yaml -n argo-cd
 ```
 kubectl config set-context --current --namespace=dev
 ```
+### kubectl imperative commands
+```
+kubectl run nginx-pod --image=nginx:alpine
+```
+```
+kubectl run redis --image=redis:alpine --labels="tier=db"
+```
+```
+kubectl expose pod redis --port=6379 --name redis-service
+```
+```
+kubectl create deployment webapp --image=kodekloud/webapp-color --replicas=3
+```
+```
+kubectl run custom-nginx --image=nginx --port=8080
+```
+```
+kubectl create deployment redis-deploy -n dev-ns --image=redis --replicas=2
+```
+```
+kubectl expose pod httpd --port=80 --name=httpd
+```
