@@ -42,3 +42,23 @@ kubectl create deployment --image:httpd:2.4-alpine
 ```
 kubectl scale deployment --replicas=3 httpd-frontend
 ```
+### dns
+```
+mysql.connect("db-service.dev.svc.cluster.local")
+db-service = service name
+dev = namespace
+svc = service
+cluster.local = domain
+```
+### get namespace
+```
+kubectl get pods -n argo-cd
+```
+### create resource in namespace
+```
+kubectl apply -f pod.yaml -n argo-cd
+```
+### change namespace in context
+```
+kubectl config set-context --current --namespace=dev
+```
