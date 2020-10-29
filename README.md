@@ -1,4 +1,9 @@
 # ckad
+### switch context
+```
+kubectl config use-context <context-name> <namespace>
+```
+
 ### create pod
 ```
 kubectl apply -f <pod-file>
