@@ -3,6 +3,9 @@
 ```
 kubectl config use-context <context-name> <namespace>
 ```
+```
+kubectl config set-context --current --namespace=namepsace_name
+```
 
 ### create pod
 ```
