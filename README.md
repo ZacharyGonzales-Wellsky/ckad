@@ -55,6 +55,15 @@ kubectl expose pod httpd --port=80 --name=httpd
 ```
 kubectl create configmap --from-literal=APP_COLOR=blue --from-literal=APP_MOD=prod
 ```
+```
+kubectl create configmap --from-file=<path-to-file>
+```
+```
+kubectl create configmap --from-file=<path-to-file>
+```
+```
+kubectl create configmap --from-file=app_config.properties
+```
 ### replicasets
 ```
 kubectl create -f replicaset-definition.yml
