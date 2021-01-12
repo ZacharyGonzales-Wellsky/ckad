@@ -1,0 +1,156 @@
+apiVersion: v1
+kind: Podmetadata:
+  creationTimestamp: "2021-01-06T05:51:48Z"
+  labels:
+    name: webapp-color
+  managedFields:
+  - apiVersion: v1    fieldsType: FieldsV1
+    fieldsV1:      f:metadata:
+        f:labels:          .: {}
+          f:name: {}
+      f:spec:
+        f:containers:
+          k:{"name":"webapp-color"}:
+            .: {}
+            f:env:
+              .: {}
+              k:{"name":"APP_COLOR"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: python-requests
+    operation: Update
+    time: "2021-01-06T05:51:48Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.244.1.3"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2021-01-06T05:51:55Z"
+  name: webapp-color
+  namespace: default
+  resourceVersion: "673"
+  selfLink: /api/v1/namespaces/default/pods/webapp-color
+  uid: f18be534-bfaa-4d6d-abf9-58bff7ccbb00
+spec:
+  containers:
+  - env:
+    - name: APP_COLOR
+      valueFrom:
+        configMapKeyRef:
+          name: webapp-config-map
+          key: APP_COLOR
+    image: kodekloud/webapp-color
+    imagePullPolicy: Always
+    name: webapp-color
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-6ltmg
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: node01
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-6ltmg
+    secret:
+      defaultMode: 420
+      secretName: default-token-6ltmg
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-06T05:51:48Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-06T05:51:55Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-06T05:51:55Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-06T05:51:48Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://d8855dfd1524274c01bb6c21946e4b5fd6db7e61da66d62b9b03b5548f1c3b71
+    image: kodekloud/webapp-color:latest
+    imageID: docker-pullable://kodekloud/webapp-color@sha256:99c3821ea49b89c7a22d3eebab5c2e1ec651452e7675af243485034a72eb1423
+    lastState: {}
+    name: webapp-color
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2021-01-06T05:51:54Z"
+  hostIP: 172.17.0.39
+  phase: Running
+  podIP: 10.244.1.3
+  podIPs:
+  - ip: 10.244.1.3
+  qosClass: BestEffort
+  startTime: "2021-01-06T05:51:48Z"

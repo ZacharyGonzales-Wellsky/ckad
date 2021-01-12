@@ -8,6 +8,6 @@ spec:
       imagePullPolicy: Never
       image: ubuntu-sleeper
       args: ["10"]
-  env:
-    - name: APP_COLOR
-      value: pink
+  envFrom:
+    - configMapRef:
+        name: app-config

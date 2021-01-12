@@ -1,7 +1,17 @@
 # ckad
+### imperative vs declarative
+#### imperative
+```
+kubectl create [node, pod, replicaset, deployment, secret configmap, service]
+```
+#### declarative 
+```
+kubectl create -f [file]
+```
+
 ### context
 ```
-kubectl config use-context <context-name> <namespace>
+kubectl config use-context [context-name] [namespace]
 ```
 ```
 kubectl config use-context --current --namespace=namepsace_name
@@ -28,13 +38,13 @@ kubectl get pods -n argo-cd
 
 ### pods
 ```
-kubectl apply -f <pod-file>
+kubectl apply -f [pod-file]
 ```
 ```
-kubectl apply -f <pod-file>
+kubectl apply -f [pod-file]
 ```
 ```
-kubectl get pod <pod-name> -o yaml > pod.yaml
+kubectl get pod [pod-name] -o yaml ] pod.yaml
 ```
 ```
 kubectl run nginx-pod --image=nginx:alpine
@@ -56,10 +66,10 @@ kubectl expose pod httpd --port=80 --name=httpd
 kubectl create configmap --from-literal=APP_COLOR=blue --from-literal=APP_MOD=prod
 ```
 ```
-kubectl create configmap --from-file=<path-to-file>
+kubectl create configmap --from-file=[path-to-file]
 ```
 ```
-kubectl create configmap --from-file=<path-to-file>
+kubectl create configmap --from-file=[path-to-file]
 ```
 ```
 kubectl create configmap --from-file=app_config.properties
