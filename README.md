@@ -14,9 +14,6 @@ kubectl create -f [file]
 kubectl config use-context [context-name] [namespace]
 ```
 ```
-kubectl config use-context --current --namespace=namepsace_name
-```
-```
 kubectl config set-context --current --namespace=dev
 ```
 
